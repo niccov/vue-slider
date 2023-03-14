@@ -36,7 +36,24 @@ createApp({
     },
 
   methods: {
+    nextSlide() {
+        
+        if(this.activeImageIndex < this.slides.length - 1) {
+          this.activeImageIndex++;
+        } else {
+          this.activeImageIndex = 0;
+        }
+  
+    },
     
+    prevSlide() {
+      
+        if(this.activeImageIndex == 0) {
+          this.activeImageIndex = this.slides.length - 1;
+        } else {
+          this.activeImageIndex--;
+        }
+      }
   },
   
 }).mount('#app')
